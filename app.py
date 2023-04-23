@@ -30,6 +30,11 @@ def format_ingredients(ingredients):
     return ingredients_list
 
 
+def fuzzy_recognition(string1, string2):
+    """Checks if a string contains another string"""
+    return string1 in string2
+
+
 def handle_load(recipes) -> list:
     """Handles the load command"""
     try:
@@ -68,7 +73,7 @@ def handle_remove(recipes: list):
     """Handles the remove command"""
     short_name_of_recipe_to_remove = view.get_recipe_query()
     for rcp in recipes:  # use for loop to find the target recipe
-        if short_name_of_recipe_to_remove in rcp.short_name.lower():
+        if fuzzy_recognition(short_name_of_recipe_to_remove, rcp.short_name.lower()):
             if view.get_confirmation(rcp.short_name):
                 recipes.remove(rcp)
                 view.print_hint("Remove successfully!")
@@ -88,7 +93,7 @@ def handle_check(recipes: list) -> None:
     """Handles the check command"""
     short_name_of_recipe_to_check = view.get_recipe_query()
     for rcp in recipes:  # use for loop to find the target recipe
-        if short_name_of_recipe_to_check in rcp.short_name.lower():
+        if fuzzy_recognition(short_name_of_recipe_to_check, rcp.short_name.lower()):
             if view.get_confirmation(rcp.short_name):
                 available_input = view.get_available_ingredients()
                 available_ingredients = format_ingredients(available_input)
