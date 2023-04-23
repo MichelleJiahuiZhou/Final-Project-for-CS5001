@@ -79,7 +79,7 @@ def get_recipe_query():
 def get_confirmation(short_name):
     """ Asks for confirmation"""
     confirmation = input(f"Is it {short_name}? Type 'y' for yes or 'n' for no").strip().lower()
-    return confirmation == "y" or "yes"
+    return confirmation == "y" or confirmation == "yes"
 
 
 def get_recipe_short_name():
