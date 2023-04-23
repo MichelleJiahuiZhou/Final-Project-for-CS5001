@@ -15,5 +15,5 @@
 
 ## How does the APP work?
 
-* Allowing the user add or remove recipes; saving recipes to a file (fixed) or loading them from it; according to available ingredients, check the unavailable ingredents for a recipe.
+* Allowing the user add or remove recipes; save recipes to a file (fixed) or load them from it; according to available ingredients, check the unavailable ingredients for a recipe.
 
