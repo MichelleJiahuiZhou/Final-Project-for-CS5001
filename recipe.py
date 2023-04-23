@@ -16,7 +16,7 @@ class Recipe:
     Methods: check_ingredients, add_ingredient,
     remove_ingredient, __str__
     """
-
+    # list is used for ingredients, because it may be edited in the future
     def __init__(self, short_name: str, ingredients: list, details: str):
         """
         Constructor -- creates new instance of recipe
