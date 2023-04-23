@@ -60,7 +60,7 @@ class Recipe:
         self.__details = new_details
 
     def check_ingredients(self, available_ingredients):
-        """Checks the number of unavailable ingredients"""
+        """Checks the unavailable ingredients of a recipe"""
         unavailable_ingredients = []
         for ingredient in self.ingredients:
             if ingredient not in available_ingredients:
