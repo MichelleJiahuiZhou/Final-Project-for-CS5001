@@ -45,7 +45,7 @@ class TestItem(unittest.TestCase):
         expected = "Salad:\ningredients: \n'vegetable', 'fruit', " \
                     "'cheese'\ndetails: \n Mingle them.Toasted " \
                     "Chicken:\ningredients: \n'chicken'\n" \
-                    "details: \n Toasted it."
+                    "details: \n Toast it."
         self.assertEqual(output, expected)
 
 
@@ -63,7 +63,7 @@ class TestItem(unittest.TestCase):
     def test_save_recipes_to_file1(self):
         """Tests saving a list of recipes to a csv file"""
         a = Recipe("Salad",["vegetable","fruit","cheese"], "Mingle them.")
-        b = Recipe("Toasted Chicken", ["chicken"], "Toasted it.")
+        b = Recipe("Toasted Chicken", ["chicken"], "Toast it.")
         save_recipes_to_file("test1.csv", [a, b])
         with open("expected file 1.csv") as file1, open("test1.csv") as file2:
             contents_one = file1.read()
